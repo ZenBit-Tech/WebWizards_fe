@@ -1,7 +1,6 @@
 import { InputOptions, OptionType} from '../../types';
 
 export const Options:React.ElementType = ({ title, options }: InputOptions):JSX.Element => {
-  debugger;
   return (
     <>
       <option value="" disabled selected>

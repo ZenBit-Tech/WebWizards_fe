@@ -33,7 +33,7 @@ const RegistrationForm2: React.FC = (): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors, isValid }
   } = useForm<DoctorSubmitValue>({
     resolver: yupResolver(validationSchema)
   });
@@ -102,7 +102,7 @@ const RegistrationForm2: React.FC = (): JSX.Element => {
         <ErrorMessage>{errors.timezone?.message}</ErrorMessage>
       </InputGroup>
       <ButtonContainer>
-        <StyledButton onClick={handleSubmit(onSubmit)}>{t('RegForm2.sign_up')}</StyledButton>
+        <StyledButton onClick={handleSubmit(onSubmit)} disabled={!isValid}>{t('RegForm2.sign_up')}</StyledButton>
       </ButtonContainer>
       <SignUpContainer>
         {t('RegForm2.isAccount')}

@@ -15,6 +15,7 @@ export const StylesConstantsColor = {
   COLOR_GHOST_WHISPER :"#F5F7FD",
   COLOR_GHOST_VERY_LIGHT_GREY :"#cecdcd",
   COLOR_GHOST_ZAMBEZI :"#585858",
+  COLOR_PINK_SWAN:"#B3B3B3",
 
   GLOBAL_FONT: 'Roboto',
 

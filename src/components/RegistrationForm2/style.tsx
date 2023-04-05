@@ -103,7 +103,10 @@ export const StyledButton = styled.button<SignInButtonProps>`
   height: 2rem;
   font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
   color: ${StylesConstantsColor.RF2_BTN_COLOR};
-  disabled: ${(props) => (props.status ? 'true' : 'false')};
+  :disabled {
+    background: ${StylesConstantsColor.COLOR_PINK_SWAN}; 
+    color: ${StylesConstantsColor.COLOR_GHOST_WHITE};
+  }
 `;
 
 export const InputGroup = styled.div`
