@@ -1,4 +1,4 @@
-import { InputGroup, Title } from 'components/RegistrationForm2/style';
+import { InputGroup, Title, TitleText } from 'components/RegistrationForm2/style';
 import { useTranslation } from 'react-i18next';
 
 export const TitleComponent:React.FC = ():JSX.Element => {
@@ -6,8 +6,8 @@ export const TitleComponent:React.FC = ():JSX.Element => {
   return (
     <InputGroup>
       <Title>{t('RegForm2.title')}</Title>
-      <span>{t('RegForm2.remark')}</span>
-      <span>{t('RegForm2.remark2')}</span>
+      <TitleText>{t('RegForm2.remark')}</TitleText>
+      <TitleText>{t('RegForm2.remark2')}</TitleText>
     </InputGroup>
   );
 };

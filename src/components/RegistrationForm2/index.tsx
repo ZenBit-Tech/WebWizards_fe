@@ -23,7 +23,8 @@ import {
   InlineContainerRow,
   ErrorMessage,
   ButtonContainer,
-  LinkContainer
+  LinkContainer,
+  SignUpContainer
 } from 'components/RegistrationForm2/style';
 import { validationSchema } from 'components/RegistrationForm2/validation';
 
@@ -103,10 +104,10 @@ const RegistrationForm2: React.FC = (): JSX.Element => {
       <ButtonContainer>
         <StyledButton onClick={handleSubmit(onSubmit)}>{t('RegForm2.sign_up')}</StyledButton>
       </ButtonContainer>
-      <span>
+      <SignUpContainer>
         {t('RegForm2.isAccount')}
         <LinkContainer to="/form">{t('RegForm2.click_here')}</LinkContainer>
-      </span>
+      </SignUpContainer>
     </RegForm2Container>
   );
 };
