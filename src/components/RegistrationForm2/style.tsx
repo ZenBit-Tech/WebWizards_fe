@@ -51,6 +51,15 @@ export const StyledSelect = styled.select<StyledProps>`
   color: ${StylesConstantsColor.INPUTS_FONT_COLOR};
   font-family: ${StylesConstantsColor.GLOBAL_FONT};
   font-size: ${StylesConstantsColor.FONT_SIZE_SMALL};
+  padding: 10px;
+  padding-right: 30px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 105.167 61.651' id='ChevronDown'%3E%3Cpath d='M2.868 3.155c3.955-4.046 9.458-4.363 14.291 0l35.434 33.971L88.026 3.155c4.834-4.363 10.347-4.046 14.269 0a10.77 10.77 0 0 1 0 14.643c-3.683 3.791-42.568 40.817-42.568 40.817a9.917 9.917 0 0 1-14.286 0S6.574 21.589 2.874 17.798a10.764 10.764 0 0 1 0-14.643Z' fill='%23595bd4' class='color000000 svgShape'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
 `;
 
 export const StyledLabel = styled.div`
@@ -104,7 +113,7 @@ export const StyledButton = styled.button<SignInButtonProps>`
   font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
   color: ${StylesConstantsColor.RF2_BTN_COLOR};
   :disabled {
-    background: ${StylesConstantsColor.COLOR_PINK_SWAN}; 
+    background: ${StylesConstantsColor.COLOR_PINK_SWAN};
     color: ${StylesConstantsColor.COLOR_GHOST_WHITE};
   }
 `;
