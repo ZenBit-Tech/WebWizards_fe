@@ -50,3 +50,7 @@ export const SNUFF = "#0000FF00";
  * @deprecated
  */
 export const RED = "#FF0000FF";
+/**
+ * @deprecated
+ */
+export const GRAY_SHADOW = '#66666666';

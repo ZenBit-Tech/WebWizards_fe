@@ -38,6 +38,9 @@
     "alreadyExistText": "Already have an account? ",
     "click": "Click here! ",
     "continueWithGoogle": "Continue with Google",
-    "continue": "Continue"
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "logoutText": "Are you sure you want to log out?"
   }
 }
