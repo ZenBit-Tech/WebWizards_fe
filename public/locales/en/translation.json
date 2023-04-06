@@ -28,6 +28,11 @@
     "error_country":"Country is required",
     "error_address":"City is required",
     "error_timezone":"Role is required"
+  }, 
+  "ForgotPassword": {
+    "title": "Forgot Password",
+    "remark": "Enter your email we'll send you a link to reset",
+    "remark2": "your password"
   }
 
 
