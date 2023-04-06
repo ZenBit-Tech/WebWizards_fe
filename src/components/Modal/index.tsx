@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import { CancelButton, SendButton, ModalButtonsWrapper, ModalContainer, ModalContent, ModalOverlay, Title } from '../Modal/styles';
+import { CancelButton, SendButton, ModalButtonsWrapper, ModalContainer, ModalContent, ModalOverlay, Title, ModalTrigger } from '../Modal/styles';
 
 interface IModal {
     confirmText: string;
     cancelTest: string;
     title: string;
+    handleSubmitModal: Function;
+    modalTriggerText: string;
 }
 
-function LogoutModal({confirmText, cancelTest, title}: IModal) {
+function LogoutModal({confirmText, cancelTest, title, handleSubmitModal, modalTriggerText}: IModal) {
   const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = () => {
-    // TODO: implement logout logic here
+    handleSubmitModal();
     setShowModal(false);
   };
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Logout</button>
+      <ModalTrigger onClick={() => setShowModal(true)}>{modalTriggerText}</ModalTrigger>
       {showModal && (
         <ModalOverlay>
             <ModalContainer>

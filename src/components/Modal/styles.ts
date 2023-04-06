@@ -107,3 +107,6 @@ export const Title = styled.h2`
   font-family: ${FONT_ROBOTO};
   text-align: center;
 `;
+
+export const ModalTrigger = styled.button`
+`
