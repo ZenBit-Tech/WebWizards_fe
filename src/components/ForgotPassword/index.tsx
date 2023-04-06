@@ -1,26 +1,43 @@
 import { useForm } from 'react-hook-form';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { ForgotPasswordContainer, StyledButton } from 'components/ForgotPassword/style';
+import {
+  ForgotPasswordContainer,
+  StyledButton,
+  LinkContainer,
+  StyledInput,
+  StyledLabel,
+  InputGroup,
+  ErrorMessage
+} from 'components/ForgotPassword/style';
 import { TitleComponent } from './components/Title/TitleComponents';
+import { IForgotPassword } from './types';
 
 const ForgotPassword: React.FC = (): JSX.Element => {
   const { t } = useTranslation();
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid }
-  } = useForm<any>({
-    // resolver: yupResolver('')
+  } = useForm<IForgotPassword>({
   });
-  const onSubmit = (data: any) => {};
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
   return (
-    <ForgotPasswordContainer>
+    <ForgotPasswordContainer onSubmit={handleSubmit(onSubmit)}>
       <TitleComponent />
-      <StyledButton onClick={handleSubmit(onSubmit)} disabled={!isValid}>
-        {t('RegForm2.sign_up')}
-      </StyledButton>
+      <InputGroup>
+        <StyledLabel> {t('ForgotPassword.email_label')}</StyledLabel>
+        <StyledInput
+          type="email"
+          {...register('email')}
+          required
+          placeholder={t('ForgotPassword.email_placeholder')!}
+        />
+      </InputGroup>
+      <ErrorMessage>{"We cannot find your email*"}</ErrorMessage>
+      <StyledButton type="submit">{t('ForgotPassword.submit')}</StyledButton>
+      <LinkContainer to=" ">{t('ForgotPassword.back')}</LinkContainer>
     </ForgotPasswordContainer>
   );
 };

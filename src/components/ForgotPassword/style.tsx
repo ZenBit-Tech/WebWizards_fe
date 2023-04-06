@@ -4,10 +4,10 @@ import { StylesConstantsColor } from 'components/ForgotPassword/constants';
 
 export const ForgotPasswordContainer = styled.form`
   display: flex;
-  height: 50vh;
+  height: 60vh;
   width: 35vw;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   margin: 0 auto;
   padding: 5em;
@@ -35,54 +35,29 @@ export const TitleText = styled.span`
   font-family: ${StylesConstantsColor.GLOBAL_FONT};
 `;
 
-interface StyledProps {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-export const StyledSelect = styled.select<StyledProps>`
-  width: 100%;
-  height: 2em;
-  border-radius: 5px;
-  background: white;
-  border: 1px solid ${StylesConstantsColor.RF2_BOX_COLOR};
-  padding: 5px;
-  color: ${StylesConstantsColor.INPUTS_FONT_COLOR};
-  font-size: 0.8rem;
-  margin: 5px;
-`;
-
 export const StyledLabel = styled.div`
   display: flex;
   width: 100%;
   font-size: 0.8em;
   align-items: left;
-  color: ${StylesConstantsColor.LABEL_COLOR};
+  color: ${StylesConstantsColor.COLOR_GHOST_ZAMBEZI};
+  font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
+  font-family: ${StylesConstantsColor.GLOBAL_FONT};
 `;
 
 export const StyledInput = styled.input`
   border-radius: 1px;
   background: white;
   border-radius: 5px;
-  border: 1px solid ${StylesConstantsColor.RF2_BOX_COLOR};
+  border: 1px solid ${StylesConstantsColor.FG_PSW_INPUT_COLOR};
+  font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
   color: ${StylesConstantsColor.INPUTS_FONT_COLOR};
+  font-family: ${StylesConstantsColor.GLOBAL_FONT};
   width: 100%;
-  height: 1em;
+  height: 3.5em;
   padding: 0.8rem;
   font-size: 0.8rem;
   margin: 5px;
-`;
-
-export const InputInlineContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
-  width: 100%;
-`;
-export const InlineContainerRow = styled.div`
-  display: flex;
-  width: 50%;
-  margin: 5px;
-  flex-direction: column;
 `;
 
 export const ButtonContainer = styled.div`
@@ -91,13 +66,15 @@ export const ButtonContainer = styled.div`
   padding: 5px;
   width: 100%;
 `;
-export const StyledButton = styled.button<any>`
+export const StyledButton = styled.button`
   background: ${StylesConstantsColor.BUTTON_BG_COLOR};
   border-radius: 8px;
-  width: 50%;
-  height: 2rem;
+  width: 60%;
+  height: 3rem;
+  font-weight: bold;
   color: ${StylesConstantsColor.RF2_BTN_COLOR};
-  disabled: ${(props) => (props.status ? 'true' : 'false')};
+  font-family: ${StylesConstantsColor.GLOBAL_FONT};
+  font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
 `;
 
 export const InputGroup = styled.div`
@@ -112,13 +89,11 @@ export const ErrorMessage = styled.div`
   width: 100%;
   font-size: small;
   color: ${StylesConstantsColor.ERROR_COLOR};
+  font-family: ${StylesConstantsColor.GLOBAL_FONT};
+  font-size: ${StylesConstantsColor.FONT_SIZE_MEDIUM};
 `;
 
 export const LinkContainer = styled(Link)`
-  font-weight: bold;
-  color: black;
-  @media only screen and (min-width: 360px) {
-    min-width: 360px;
-    font-size: 0.8em;
-  }
+  color: ${StylesConstantsColor.COLOR_LINK};
+  font-family: ${StylesConstantsColor.GLOBAL_FONT};
 `;

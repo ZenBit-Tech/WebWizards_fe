@@ -32,7 +32,11 @@
   "ForgotPassword": {
     "title": "Forgot Password",
     "remark": "Enter your email we'll send you a link to reset",
-    "remark2": "your password"
+    "remark2": "your password",
+    "email_label":"Email",
+    "email_placeholder":"Enter your email...",
+    "submit":"Submit",
+    "back":"< Back to Login"
   }
 
 
