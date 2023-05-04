@@ -161,9 +161,14 @@
     "youSelected": "You selected:",
     "date": "Date:",
     "selectTimezone": "Time Zone:",
-    "successfullySubmited": "Your schedule has been successfully updated!",
     "stepOne":"Step 1/2",
     "prevStep":"Previous step",
-    "nextStep":"Next step"
+    "nextStep":"Next step",
+    "successfullySubmited": "Your schedule has been successfully updated!"
+  },
+  "NotFoundPage":{
+    "notFound":"Page not found ",
+    "doesntExist":"This page you are looking for doesn’t exist or an other occurred.",
+    "404":"404"
   }
 }

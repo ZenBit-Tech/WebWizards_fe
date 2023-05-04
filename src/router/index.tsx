@@ -12,9 +12,9 @@ import Help from '@pages/help';
 import Activation from '@pages/auth/signUp/activation';
 import CreatePatientCard from '@pages/patient/createPatientCard';
 import EditPatientCard from '@pages/patient/EditPatientCard';
+
 // import TempScheduler from '@pages/tempScheduler';
 import NotFound from '@pages/notFound';
-
 import CreateAppointment from "@pages/appointment"
 import DoctorScheduler from '@pages/doctorScheduler';
 import ProtectedRoute from './protected-route';
@@ -49,6 +49,7 @@ const AppRouter = () => {
         <Route path={PATH.VERIFICATION} element={<Activation />} />
         <Route path={PATH.LOGIN} element={<Login />} />
         <Route path={PATH.RESET_PASS} element={<ResetPassword />} />
+
         <Route
           path={PATH.CREATE_PATIENT_CARD}
           element={<CreatePatientCard />}
@@ -57,8 +58,6 @@ const AppRouter = () => {
           path={PATH.EDIT_PATIENT_CARD}
           element={<EditPatientCard />}
         />
-
-
         {/* Private Routes */}
         <Route
           path={PATH.SIGN_UP_SECOND_STEP_GOOGLE}
@@ -73,6 +72,14 @@ const AppRouter = () => {
           element={
             <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <CreatePatientCard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={PATH.EDIT_PATIENT_CARD}
+          element={
+            <ProtectedRoute allowedRoles={['Remote', 'Local']}>
+              <EditPatientCard />
             </ProtectedRoute>
           }
         />
@@ -140,7 +147,9 @@ const AppRouter = () => {
         <Route path={PATH.DASHBOARD} element={<Profile />} />
         {/* <Route path={PATH.SCHEDULER} element={<TempScheduler />} /> */}
         <Route path="*" element={<NotFound />} />
+
         <Route path={PATH.APPOINTMENT} element={<CreateAppointment />} />
+
       </Routes>
     </PageWrapper>
   );
