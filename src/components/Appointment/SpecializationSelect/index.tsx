@@ -5,9 +5,12 @@ import { InputProps } from '@components/Patient/Inputs/type';
 import SelectInput from '@components/Select';
 import { specializations } from '@constants/mockData';
 
-function SpecializationSelectInput({ control, errors }: InputProps) {
+interface Prop {
+    setSpecialization: React.Dispatch<React.SetStateAction<number>>
+}
+function SpecializationSelectInput({ control, errors, setSpecialization }: InputProps & Prop) {
   const { t } = useTranslation();
-  
+
   return (
     <Container style={{ padding: '0' }}>
       <SelectInput
@@ -19,6 +22,8 @@ function SpecializationSelectInput({ control, errors }: InputProps) {
         error={Boolean(errors?.specialization)}
         options={specializations}
         required={true}
+        onChange={(e) => console.log("Change")}
+        setSpecialization={setSpecialization}
       />
     </Container>
   );

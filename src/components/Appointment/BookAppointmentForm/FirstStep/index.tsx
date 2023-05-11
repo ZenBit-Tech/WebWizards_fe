@@ -31,7 +31,12 @@ interface Props {
   control: Control;
   errors: FieldErrors;
   setStep: React.Dispatch<React.SetStateAction<boolean>>;
+  isDirty: boolean;
+  setSpecialization: React.Dispatch<React.SetStateAction<number>>;
 }
+
+
+import MyForm from "@components/Appointment/TEST";
 
 const FirstStepAppointment = ({
   formattedDate,
@@ -43,16 +48,24 @@ const FirstStepAppointment = ({
   control,
   errors,
   setStep,
+  isDirty,
+  setSpecialization
 }: InputProps & Props) => {
   const { t } = useTranslation();
 
+  console.log(`isDirty`, isDirty);
+
   return (
     <>
+    <MyForm/>
       <StepWrapper>
         <Text>{t('BookAppointment.stepOne')}</Text>
         <CancelBtn />
       </StepWrapper>
-      <SpecializationInput control={control} errors={errors} />
+      <SpecializationInput control={control} errors={errors}
+        setSpecialization= {setSpecialization}
+
+      />
       <CalendarWrapper>
         <Controller
           control={control}
@@ -68,15 +81,14 @@ const FirstStepAppointment = ({
           )}
         />
       </CalendarWrapper>
-
       <AppointmentTime
-        control={control}
-        errors={errors}
-        formattedTime={formattedTime}
-        onChange={(value) => {
-          setFormattedTime(value);
-        }}
-      />
+          control={control}
+          errors={errors}
+          formattedTime={formattedTime}
+          onChange={(value) => {
+            setFormattedTime(value);
+          }}
+        />
 
       <FormFooter>
         <FormInfo>

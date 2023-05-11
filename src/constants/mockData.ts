@@ -30,8 +30,8 @@ export const timeZones = [
 ];
 
 export const appointmentTime = [
-  { value: 1, label: '9:00-10:00' },
-  { value: 2, label: '10:00-11:00' },
+  { value: 1, label: '12:30 PM-01:00 PM' },
+  { value: 2, label: '12:30 PM-01:00 PM' },
   { value: 3, label: '11:00-12:00' },
 ];
 
@@ -171,3 +171,55 @@ export const ListOfDoctors = [
     rating: '1',
   },
 ];
+
+
+export const FreeSlots = [
+    {
+        "id": 37,
+        "uuid": "6f276ded-4505-422c-b634-736ff3e1b61b",
+        "title": "Availability 1",
+        "start": "2023-05-16T09:30:00.000Z",
+        "end": "2023-05-16T10:00:00.000Z",
+        "doctor": {
+            "id": 8,
+            "role": "Remote",
+            "specialization": 1
+        }
+    },
+    {
+        "id": 38,
+        "uuid": "6f276ded-4505-422c-b634-736ff3e1f61b",
+        "title": "Availability 1",
+        "start": "2023-05-16T10:30:00.000Z",
+        "end": "2023-05-16T1:00:00.000Z",
+        "doctor": {
+            "id": 8,
+            "role": "Remote",
+            "specialization": 1
+        }
+    },
+    {
+        "id": 39,
+        "uuid": "6f276ded-4505-422c-b634-736ff3e1b61b",
+        "title": "Availability 1",
+        "start": "2023-05-25T09:30:00.000Z",
+        "end": "2023-05-25T10:00:00.000Z",
+        "doctor": {
+            "id": 8,
+            "role": "Remote",
+            "specialization": 1
+        }
+    },
+    {
+        "id": 41,
+        "uuid": "6f276ded-4505-422c-b634-736ff3e1b61b",
+        "title": "Availability 1",
+        "start": "2023-05-27T09:30:00.000Z",
+        "end": "2023-05-27T10:00:00.000Z",
+        "doctor": {
+            "id": 11,
+            "role": "Remote",
+            "specialization": 1
+        }
+    }
+]

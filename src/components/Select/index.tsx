@@ -7,6 +7,7 @@ import { FieldName } from '@types';
 
 export type Props = {
   options: Option[];
+  setSpecialization: React.Dispatch<React.SetStateAction<any>>;
 } & TextFieldProps;
 
 export function SelectInput({
@@ -16,6 +17,7 @@ export function SelectInput({
   error,
   placeholder,
   options = [],
+  setSpecialization,
 }: Props & { control: Control<FormValues> }) {
   return (
     <InputContainer hasError={!!error}>
@@ -26,7 +28,10 @@ export function SelectInput({
         render={({ field: { ref, onChange, value, ...field } }) => (
           <Autocomplete
             options={options}
-            onChange={(_, data) => onChange(data?.value)}
+            onChange={(_, data) => {
+              setSpecialization(data?.value);
+              return onChange(data?.value);
+            }}
             renderInput={(params) => (
               <TextField
                 {...params}

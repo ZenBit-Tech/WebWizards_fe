@@ -5,12 +5,24 @@ import { InputProps } from '@components/Patient/Inputs/type';
 import SelectInput from '@components/Select';
 import { appointmentTime } from '@constants/mockData';
 import { AppointmentFormValues } from '@components/general/type';
+import useAppointmentCalendarHook from '../../../hooks/BookAppointment/useAppointmentCalendar.hook';
+
+import { useEffect, useState } from 'react';
 
 function AppointmentTimeSelectInput({
   control,
   errors,
 }: InputProps & AppointmentFormValues) {
   const { t } = useTranslation();
+
+  const { formattedAppointments } = useAppointmentCalendarHook({});
+
+  const [options, setOptions] = useState([]);
+
+  useEffect(() => {
+      console.log(`TIME`,formattedAppointments)
+    setOptions(formattedAppointments);
+  }, []);
 
   return (
     <Container style={{ padding: '0' }}>
@@ -21,7 +33,7 @@ function AppointmentTimeSelectInput({
         placeholder={t('BookAppointment.SelectAppointmentTime') ?? ''}
         helperText={errors.appointmentTimeRange?.message}
         error={Boolean(errors?.appointmentTimeRange)}
-        options={appointmentTime}
+        options={options} //відформатовані дати для показу з хука
         required={true}
       />
     </Container>

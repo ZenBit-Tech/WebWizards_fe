@@ -26,11 +26,16 @@ const BookAppointmentForm: React.FC = () => {
   const [formattedTime, setFormattedTime] = useState('');
   const [step, setStep] = useState<boolean>(false);
 
+  const [specialization, setSpecialization] = useState(null);
+
+
+  console.log(`FORM SPEC`, specialization)
+
   const {
     handleSubmit,
     control,
     register,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty  },
   } = useForm<AppointmentFormValues>({
     mode: 'onChange',
     defaultValues: {
@@ -93,6 +98,8 @@ const BookAppointmentForm: React.FC = () => {
             control={control}
             errors={errors}
             setStep={setStep}
+            isDirty={isDirty}
+            setSpecialization={setSpecialization}
           />
         ) : (
           <SecondStepAppointment
