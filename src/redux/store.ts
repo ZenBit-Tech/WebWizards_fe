@@ -21,10 +21,13 @@ import { navigationReducer } from 'redux/slices/NavigationSlice';
 import { doctorReducer } from 'redux/slices/DoctorSlice';
 import { resetPasswordReducer } from '@redux/slices/auth/resetPassword';
 import { createPatientReducer } from '@redux/slices/patient/createPatient';
-import { noteFilterReducer } from './slices/NoteFilterSlice';
-import { patientApi } from '../services/PatientService';
-import { availabilityApi } from '../services/AvailabilityService';
-import { appointmentApi } from '../services/BookAppointmetService';
+import { socketAppointmenttReducer } from '@redux/slices/socketAppointmentsSlice';
+import { zoomApi } from 'services/ZoomService';
+import { zoomReducer } from './slices/ZoomSlice';
+import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
+import { patientApi } from 'services/PatientService';
+import { availabilityApi } from 'services/AvailabilityService';
+import { appointmentApi } from 'services/AppointmentService';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -36,11 +39,14 @@ const rootReducer = combineReducers({
   activationAccountReducer,
   createPatientReducer,
   noteFilterReducer,
+  zoomReducer,
+  socketAppointmenttReducer,
   [noteApi.reducerPath]: noteApi.reducer,
   [doctorApi.reducerPath]: doctorApi.reducer,
   [authApi.reducerPath]: authApi.reducer,
   [patientApi.reducerPath]: patientApi.reducer,
   [availabilityApi.reducerPath]: availabilityApi.reducer,
+  [zoomApi.reducerPath]: zoomApi.reducer,
   [appointmentApi.reducerPath]: appointmentApi.reducer,
 });
 const persistConfig = {
@@ -53,7 +59,10 @@ const persistConfig = {
     'forgotPassword',
     'loginReducer',
     'signUpReducer',
+    'zoomApi',
+    'zoomReducer',
     'noteFilterReducer',
+    'socketAppointmenttReducer',
     'authApi',
     'noteApi',
     'appointmentApi',
@@ -62,23 +71,22 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const setupStore = () =>
-  configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-        },
-      }).concat(
-        doctorApi.middleware,
-        authApi.middleware,
-        noteApi.middleware,
-        patientApi.middleware,
-        availabilityApi.middleware,
+export const setupStore = () => configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }).concat(
+    doctorApi.middleware,
+    authApi.middleware,
+    noteApi.middleware,
+    patientApi.middleware,
+    availabilityApi.middleware,
+    zoomApi.middleware,,
         appointmentApi.middleware
-      ),
-  });
+  ),
+});
 export const store = setupStore();
 export const persistor = persistStore(store);
 
