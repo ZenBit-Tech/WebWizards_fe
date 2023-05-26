@@ -22,6 +22,7 @@ import Dashboard from '@pages/dashboard';
 import Patients from '@pages/patients';
 import cookie from 'utils/functions/cookies';
 import AppointmentsDoctorScheduler from '@pages/doctorScheduler/appointmentsScheduler';
+import Dashboard from "@pages/dashboard";
 import Chat from '@components/Chat';
 
 export const PATH = {
@@ -59,7 +60,7 @@ const AppRouter = () => {
         <Route
           path={PATH.SIGN_UP_SECOND_STEP_GOOGLE}
           element={
-            <ProtectedRoute allowedRoles={['']}>
+            <ProtectedRoute allowedRoles={['']} >
               <SignUpSecondFormGoogle />
             </ProtectedRoute>
           }
@@ -154,9 +155,6 @@ const AppRouter = () => {
         />
         <Route path={PATH.FORGOT_PASS} element={<ForgotPassword />} />
         <Route path={PATH.CONFIRM} element={<Confirmation />} />
-        <Route path={PATH.EDIT_DOCTOR_PROFILE} element={<Profile />} />
-        <Route path={PATH.HELP} element={<Help />} />
-        <Route path={PATH.DASHBOARD} element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </PageWrapper>
