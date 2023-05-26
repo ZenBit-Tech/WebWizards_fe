@@ -83,7 +83,7 @@ export const setupStore = () => configureStore({
     noteApi.middleware,
     patientApi.middleware,
     availabilityApi.middleware,
-    zoomApi.middleware,,
+    zoomApi.middleware,
         appointmentApi.middleware
   ),
 });
