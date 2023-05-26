@@ -18,10 +18,12 @@ import NotFound from '@pages/notFound';
 import DoctorScheduler from '@pages/doctorScheduler';
 import ProtectedRoute from './protected-route';
 import PatientInfo from '@pages/patient/patientInfo';
+import ZoomPage from '@pages/zoom';
 import Patients from '@pages/patients';
 import cookie from 'utils/functions/cookies';
 import AppointmentsDoctorScheduler from '@pages/doctorScheduler/appointmentsScheduler';
-import Dashboard from "@pages/dashboard";
+import Dashboard from '@pages/dashboard';
+import { createSocketWithHandlers } from '@components/Zoom/socket-io';
 import Chat from '@components/Chat';
 
 export const PATH = {
@@ -43,6 +45,7 @@ export const PATH = {
   PATIENTS_LIST: '/patients',
   PATIENT_CARD_INFO: '/patient/:id',
   APPOINTMENTS: '/appointment',
+  ZOOM: '/zoom',
   CHAT: '/chat',
 };
 
@@ -55,11 +58,14 @@ const AppRouter = () => {
         <Route path={PATH.VERIFICATION} element={<Activation />} />
         <Route path={PATH.LOGIN} element={<Login />} />
         <Route path={PATH.RESET_PASS} element={<ResetPassword />} />
+        <Route path={PATH.FORGOT_PASS} element={<ForgotPassword />} />
+        <Route path={PATH.CONFIRM} element={<Confirmation />} />
+        <Route path={PATH.ZOOM} element={<ZoomPage />} />
         {/* Private Routes */}
         <Route
           path={PATH.SIGN_UP_SECOND_STEP_GOOGLE}
           element={
-            <ProtectedRoute allowedRoles={['']} >
+            <ProtectedRoute allowedRoles={['']}>
               <SignUpSecondFormGoogle />
             </ProtectedRoute>
           }

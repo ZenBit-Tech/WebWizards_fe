@@ -152,7 +152,9 @@
     "receivedVerInfo": "You received verification link to email",
     "sendAgain": "Send again",
     "notification": "Link has been sended",
-    "close": "Close"
+    "close": "Close",
+    "anesthesiology": "Anesthesiology",
+    "cardiology": "Cardiology"
   },
   "Warning": {
     "viewScheduleWarning": "Warning: you are in view mode and creating new schedule will be done according to your local time!"
@@ -170,7 +172,7 @@
     "localDoctorAvailability": "As Local doctor you work full-time work day and can't set your availability time!"
   },
   "BookAppointment": {
-    "instruction":"Please choose a specialization of a doctor first. Then you will see all available dates, and after that, you can choose a suitable time for your client.",
+    "instruction": "Please choose a specialization of a doctor first. Then you will see all available dates, and after that, you can choose a suitable time for your client.",
     "selectDoctorSpecialization": "Select doctor specialization",
     "selectDay": "Select a day of appointment",
     "SelectAppointmentTime": "Select a time of appointment",
@@ -244,6 +246,15 @@
     "patient": "Patient",
     "lastAppointment": "Last Appointment",
     "noAppointmentsYet": "The patient has no appointments yet"
+  },
+  "Notification": {
+    "youHaveVideoCallIn": "You will have a video-call in",
+    "youCurrentlyHaveMeeting": "You currently have meeting with:",
+    "Ms": "Ms.",
+    "Mr": "Mr.",
+    "details": "Details",
+    "goToMeetingRoom": "Go to the meeting room",
+    "and": "and"
   },
   "Chat": {
     "typeMessage": "Type your message...",
