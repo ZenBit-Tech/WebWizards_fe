@@ -32,7 +32,6 @@ export const MeetNotification = () => {
   const { patient, startTime, endTime, remoteDoctor, localDoctor } =
     nextAppointment;
   const doctor = useAppSelector((state) => state.doctorReducer);
-
   const formattedCurrentTime = moment().format('YYYY-MM-DDTHH:mm:ss.SSS[Z]');
   const diffTimeStart =
     new Date(startTime).getTime() - new Date(formattedCurrentTime).getTime();
