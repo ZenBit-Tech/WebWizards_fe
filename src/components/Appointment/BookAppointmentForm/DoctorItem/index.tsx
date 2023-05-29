@@ -81,7 +81,7 @@ const DoctorItemComponent = ({
               />
             )}
           />
-          {doc.doctor.photoUrl ? (
+          {doc?.doctor.photoUrl ? (
             <DoctorImg src={finalUrl} alt={doctor} width={32} height={32} />
           ) : (
             <DoctorImg
