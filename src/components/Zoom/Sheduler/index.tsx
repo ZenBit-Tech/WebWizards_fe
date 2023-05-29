@@ -15,7 +15,7 @@ const Scheduler = () => {
   const dispatch = useAppDispatch();
 
   const socketCallConfig = useAppSelector(
-    (state) => state.socketAppointmenttReducer.callConfig
+    (state) => state.socketAppointmentReducer.callConfig
   );
 
   const [getSignature] = zoomApi.useGetSignatureMutation();
@@ -37,7 +37,7 @@ const Scheduler = () => {
   // },[socketCallConfig])
 
   const socketNextAppointment = useAppSelector(
-    (state) => state.socketAppointmenttReducer.nextAppointment
+    (state) => state.socketAppointmentReducer.nextAppointment
   );
 
   const handleAppointmentStarted = (data) => {

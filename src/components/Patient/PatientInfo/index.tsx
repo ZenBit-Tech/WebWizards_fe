@@ -83,7 +83,6 @@ function PatientCardInfo() {
         <Spinner />
       ) : (
         <>
-          <MeetNotification />
           <PatientCardInfoContainer>
             <PatientInfoName>{patientFullName}</PatientInfoName>
             <ContactsContainer>
