@@ -19,7 +19,6 @@ import DoctorScheduler from '@pages/doctorScheduler';
 import ProtectedRoute from './protected-route';
 import PatientInfo from '@pages/patient/patientInfo';
 import ZoomPage from '@pages/zoom';
-import Dashboard from '@pages/dashboard';
 import Patients from '@pages/patients';
 import cookie from 'utils/functions/cookies';
 import AppointmentsDoctorScheduler from '@pages/doctorScheduler/appointmentsScheduler';
@@ -128,7 +127,7 @@ const AppRouter = () => {
           }
         />
         <Route
-          path={PATH.APPOINTMENT}
+          path={PATH.APPOINTMENTS}
           element={
             <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <AppointmentsDoctorScheduler />
