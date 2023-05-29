@@ -19,6 +19,7 @@ import DoctorScheduler from '@pages/doctorScheduler';
 import ProtectedRoute from './protected-route';
 import PatientInfo from '@pages/patient/patientInfo';
 import ZoomPage from '@pages/zoom';
+import Dashboard from '@pages/dashboard';
 import Patients from '@pages/patients';
 import cookie from 'utils/functions/cookies';
 import AppointmentsDoctorScheduler from '@pages/doctorScheduler/appointmentsScheduler';
@@ -121,13 +122,13 @@ const AppRouter = () => {
         <Route
           path={PATH.AVAILABILITY}
           element={
-            <ProtectedRoute allowedRoles={['Remote']}>
+            <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <DoctorScheduler />
             </ProtectedRoute>
           }
         />
         <Route
-          path={PATH.APPOINTMENTS}
+          path={PATH.APPOINTMENT}
           element={
             <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <AppointmentsDoctorScheduler />
@@ -160,6 +161,9 @@ const AppRouter = () => {
         />
         <Route path={PATH.FORGOT_PASS} element={<ForgotPassword />} />
         <Route path={PATH.CONFIRM} element={<Confirmation />} />
+        <Route path={PATH.EDIT_DOCTOR_PROFILE} element={<Profile />} />
+        <Route path={PATH.HELP} element={<Help />} />
+        <Route path={PATH.DASHBOARD} element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </PageWrapper>
