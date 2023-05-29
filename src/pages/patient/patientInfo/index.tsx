@@ -11,7 +11,7 @@ const PatientInfo = () => {
     <>
       <GoBackLink />
       <ZoomComponent />
-      <MeetNotification />
+      {/* <MeetNotification /> */}
       <PatientCardInfo />
       <WeeklyCalendar />
       <Notes />
