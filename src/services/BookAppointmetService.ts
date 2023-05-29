@@ -10,9 +10,9 @@ export interface Appointment {
   startTime: string;
 }
 
-export const appointmentApi = createApi({
-  reducerPath: 'appointmentApi',
-  tagTypes: ['Appointment', 'Availability'],
+export const bookAppointmentApi = createApi({
+  reducerPath: 'bookAppointmentApi',
+  tagTypes: ['BookAppointment'],
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_REACT_APP_BASE_URL_SERVER,
     prepareHeaders: (headers) => {
@@ -51,7 +51,7 @@ export const appointmentApi = createApi({
         method: 'POST',
         body: data,
       }),
-      invalidatesTags: ['Availability'],
+      invalidatesTags: ['BookAppointment'],
     }),
   }),
 });
@@ -60,4 +60,4 @@ export const {
   useGetSpecializationByIdQuery,
   useGetAllAvalibleDoctorsQuery,
   useCreateAppointmentMutation,
-} = appointmentApi;
+} = bookAppointmentApi;

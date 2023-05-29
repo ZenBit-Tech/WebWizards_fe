@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '@redux/hooks';
-import { appointmentApi } from 'services/BookAppointmetService';
+import { bookAppointmentApi } from 'services/BookAppointmetService';
 import { zoomLink, twoDigit, long, numeric, enUS } from '@constants/other';
 import { fullYearFormat, fullDateTimeFormat } from '@constants/format';
 
@@ -19,7 +19,7 @@ interface DateObject {
 const useAppointmentBookFormHook = () => {
   const [selectedDate, setSelectedDate] = useState<Date | string>();
   const [formattedDate, setFormattedDate] = useState<string>('');
-  const [createAppointment] = appointmentApi.useCreateAppointmentMutation();
+  const [createAppointment] = bookAppointmentApi.useCreateAppointmentMutation();
   const doctorData = useAppSelector((state) => state.doctorReducer);
   const navigate = useNavigate();
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { DayClickEventHandler } from 'react-day-picker';
 import { addMonths } from 'date-fns';
-import { appointmentApi } from 'services/BookAppointmetService';
+import { bookAppointmentApi } from 'services/BookAppointmetService';
 import { BLUE, HINT } from '@constants/colors';
 import { getThreeMonthPeriod, formatTimeRange } from 'utils/functions/timeUtils';
 interface Props {
@@ -43,7 +43,7 @@ const useAppointmentCalendarHook = ({
   const [freeSlots, setFreeSlots] = useState<FreeSlotProps[]>([]);
   const currentStyle = { backgroundColor: `${BLUE}` };
   const bookedStyle = { color: `${HINT}` };
-  const { data } = appointmentApi.useGetSpecializationByIdQuery(specialization);
+  const { data } = bookAppointmentApi.useGetSpecializationByIdQuery(specialization);
 
   useEffect(() => {
     if (specialization !== undefined && data) {
