@@ -30,7 +30,7 @@ import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import cookie from 'utils/functions/cookies';
-import { doctorActions } from '@redux/slices/DoctorSlice';
+import { clearPersist, doctorActions } from '@redux/slices/DoctorSlice';
 import { AppDispatch } from '@redux/store';
 import { authApi } from 'services/AuthService';
 import { appointmentsApi } from 'services/AppointmentService';
@@ -68,6 +68,7 @@ function LoginForm() {
 
   const onSubmit = async (data: IAuth) => {
     try {
+      dispatch(clearPersist());
       const res = await login(data).unwrap();
       const { token, userInfo } = res;
       dispatch(doctorActions.getDoctor(userInfo));
