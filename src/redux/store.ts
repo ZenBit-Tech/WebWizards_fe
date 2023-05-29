@@ -25,7 +25,7 @@ import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
 import { patientApi } from 'services/PatientService';
 import { availabilityApi } from 'services/AvailabilityService';
 import { appointmentApi } from 'services/AppointmentService';
-import { socketAppointmenttReducer } from '@redux/slices/socketAppointmentsSlice';
+import { socketAppointmentReducer } from '@redux/slices/socketAppointmentsSlice';
 import { zoomReducer } from './slices/ZoomSlice';
 import { zoomApi } from 'services/ZoomService';
 import { bookAppointmentApi } from 'services/BookAppointmetService';
@@ -41,7 +41,7 @@ const rootReducer = combineReducers({
   createPatientReducer,
   noteFilterReducer,
   zoomReducer,
-  socketAppointmenttReducer,
+  socketAppointmentReducer,
   [noteApi.reducerPath]: noteApi.reducer,
   [doctorApi.reducerPath]: doctorApi.reducer,
   [authApi.reducerPath]: authApi.reducer,
@@ -64,7 +64,7 @@ const persistConfig = {
     'zoomApi',
     'zoomReducer',
     'noteFilterReducer',
-    'socketAppointmenttReducer',
+    'socketAppointmentReducer',
     'authApi',
     'noteApi',
     'appointmentApi',

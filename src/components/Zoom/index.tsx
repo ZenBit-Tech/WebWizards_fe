@@ -28,7 +28,7 @@ const ZoomComponent = () => {
   const [status, setStatus] = React.useState(false);
 
   const socketNextAppointment = useAppSelector(
-    (state) => state.socketAppointmenttReducer.nextAppointment
+    (state) => state.socketAppointmentReducer.nextAppointment
   );
 
   const socketCallConfig = useAppSelector(
