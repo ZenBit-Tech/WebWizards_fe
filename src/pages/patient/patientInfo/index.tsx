@@ -4,12 +4,14 @@ import WeeklyCalendar from '@components/WeeklyCalendar';
 import ZoomComponent from '@components/Zoom';
 import Notes from '@components/Notes';
 import GoBackLink from '@components/GoBackLink';
+import { Notification } from '@components/MeetNotification';
 
 const PatientInfo = () => {
   return (
     <>
-      <ZoomComponent />
       <GoBackLink />
+      <ZoomComponent />
+      <Notification />
       <PatientCardInfo />
       <WeeklyCalendar />
       <Notes />

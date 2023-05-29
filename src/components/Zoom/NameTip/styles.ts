@@ -1,4 +1,4 @@
-import { WHITE } from '@constants/colors';
+import { BLACK_BUT_NOT, WHITE } from '@constants/colors';
 import { NORMAL_FONT_SIZE, SMALL_FONT_SIZE } from '@constants/fontSizes';
 import FONT_ROBOTO from '@constants/fonts';
 import styled from 'styled-components';
@@ -18,7 +18,7 @@ export const NameTipStyle = styled.div`
     isSelfFullScreen ? 'fixed' : 'absolute'};
   bottom: 8px;
   left: 8px;
-  background: #00000085;
+  background: ${BLACK_BUT_NOT};
 
   border-radius: 4px;
 

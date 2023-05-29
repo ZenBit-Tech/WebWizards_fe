@@ -1,7 +1,7 @@
 import React from 'react';
 import { StartCallButtonStyle } from './styles';
 import { ReactComponent as CameraIcon } from '@assets/Video Camera.svg';
-import { init } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 interface StartCallButtonProps {
   initAndJoinSession?: () => void;
@@ -12,9 +12,10 @@ const StartCallButton = ({
   initAndJoinSession,
   init,
 }: StartCallButtonProps) => {
+  const { t } = useTranslation();
   return (
     <StartCallButtonStyle onClick={init}>
-      <p>Start Call</p>
+      <p>{t('Chat.StartCall')}</p>
       <CameraIcon />
     </StartCallButtonStyle>
   );

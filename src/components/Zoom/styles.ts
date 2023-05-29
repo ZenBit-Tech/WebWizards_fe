@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Participant } from '@zoom/videosdk';
+import { COLOR_THREE, BLACK_BUT_NOT } from '@constants/colors';
+import { AZURE } from './../../constants/colors';
 
 interface SelfVideoProps {
   isSelfFullScreen: boolean;
@@ -10,7 +12,7 @@ interface ParticipantCanvasProps {
 }
 
 export const VideoContainer = styled.div`
-  background-color: #d7ddf4;
+  background-color: ${COLOR_THREE};
   padding: 12px;
   height: fit-content;
   display: flex;
@@ -31,7 +33,7 @@ export const SelfVideo = styled.video<SelfVideoProps>`
 
   border-radius: 4px;
   background-color: ${({ isSelfFullScreen }) =>
-    isSelfFullScreen ? '#00000085' : 'azure'};
+    isSelfFullScreen ? `${BLACK_BUT_NOT}` : `${AZURE}`};
   transition: all 0.3s;
 `;
 
@@ -50,6 +52,6 @@ export const ParticipantCanvas = styled.canvas<ParticipantCanvasProps>`
 
   border-radius: 4px;
   background-color: ${({ isParticipantFullScreen }) =>
-    isParticipantFullScreen ? '#00000085' : 'azure'};
+    isParticipantFullScreen ? `${BLACK_BUT_NOT} ` : `${AZURE}`};
   transition: all 0.3s;
 `;

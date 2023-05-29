@@ -48,6 +48,7 @@ function PatientCardInfo() {
   const { data: patient, isLoading } = patientApi.useGetPatientByIdQuery(
     Number(id)
   );
+  console.log(patient);
 
   const userAge: string = patient?.birthDate
     ? `${
@@ -66,7 +67,7 @@ function PatientCardInfo() {
   const patientAge = `${userAge}`;
 
   const showLastAppointment = () => {
-    const lastAppointment = patient.notes[0]?.note;
+    const lastAppointment = '12345';
 
     if (lastAppointment) {
       return showMore

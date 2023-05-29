@@ -1,4 +1,4 @@
-import { WHITE } from '@constants/colors';
+import { BLACK_BUT_NOT, WHITE } from '@constants/colors';
 import { NORMAL_FONT_SIZE } from '@constants/fontSizes';
 import FONT_ROBOTO from '@constants/fonts';
 import styled from 'styled-components';
@@ -13,7 +13,7 @@ export const GoToFullScreenButtonStyle = styled.button<GoToFullScreenButtonStyle
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #00000085;
+  background: ${BLACK_BUT_NOT};
   border-radius: 50%;
 
   position: ${({ isSelfFullScreen, isParticipantFullScreen }) =>

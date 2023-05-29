@@ -28,7 +28,7 @@ import { appointmentApi } from 'services/AppointmentService';
 import { socketAppointmenttReducer } from '@redux/slices/socketAppointmentsSlice';
 import { zoomReducer } from './slices/ZoomSlice';
 import { zoomApi } from 'services/ZoomService';
-import {bookAppointmentApi} from 'services/BookAppointmetService'
+import { bookAppointmentApi } from 'services/BookAppointmetService';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -49,7 +49,7 @@ const rootReducer = combineReducers({
   [availabilityApi.reducerPath]: availabilityApi.reducer,
   [appointmentApi.reducerPath]: appointmentApi.reducer,
   [zoomApi.reducerPath]: zoomApi.reducer,
-  [bookAppointmentApi.reducerPath]:bookAppointmentApi.reducer,
+  [bookAppointmentApi.reducerPath]: bookAppointmentApi.reducer,
 });
 const persistConfig = {
   key: 'root',
@@ -90,7 +90,7 @@ export const setupStore = () =>
         availabilityApi.middleware,
         appointmentApi.middleware,
         zoomApi.middleware,
-        bookAppointmentApi.middleware,
+        bookAppointmentApi.middleware
       ),
   });
 export const store = setupStore();

@@ -1,4 +1,4 @@
-import { WHITE } from '@constants/colors';
+import { BLACK_BUT_NOT, SOME_COLOR, WHITE } from '@constants/colors';
 import { NORMAL_FONT_SIZE } from '@constants/fontSizes';
 import FONT_ROBOTO from '@constants/fonts';
 import styled from 'styled-components';
@@ -30,7 +30,7 @@ export const PanelButtonStyle = styled.button<CallPanelWrapperProps>`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #00000085;
+  background: ${BLACK_BUT_NOT};
   border-radius: 50%;
 
   font-family: ${FONT_ROBOTO};
@@ -60,7 +60,7 @@ export const EndCallButtonStyle = styled.button<CallPanelWrapperProps>`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #e9380d;
+  background: ${SOME_COLOR};
   border-radius: 50%;
 
   font-family: ${FONT_ROBOTO};
