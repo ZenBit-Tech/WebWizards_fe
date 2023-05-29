@@ -45,7 +45,7 @@ export const PATH = {
   AVAILABILITY: '/availability',
   PATIENTS_LIST: '/patients',
   PATIENT_CARD_INFO: '/patient/:id',
-  APPOINTMENTS: '/appointments',
+  APPOINTMENT: '/appointment',
   ZOOM: '/zoom',
   CHAT: '/chat',
 };
@@ -128,7 +128,7 @@ const AppRouter = () => {
           }
         />
         <Route
-          path={PATH.APPOINTMENTS}
+          path={PATH.APPOINTMENT}
           element={
             <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <AppointmentsDoctorScheduler />
