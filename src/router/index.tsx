@@ -163,6 +163,7 @@ const AppRouter = () => {
         <Route path={PATH.CONFIRM} element={<Confirmation />} />
         <Route path={PATH.EDIT_DOCTOR_PROFILE} element={<Profile />} />
         <Route path={PATH.HELP} element={<Help />} />
+        <Route path={PATH.DASHBOARD} element={<Profile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </PageWrapper>
