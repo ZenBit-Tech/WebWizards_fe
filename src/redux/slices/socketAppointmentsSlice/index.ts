@@ -2,15 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   nextAppointment: {
-    nextAppointment: {
-      endTime: '',
-      id: null,
-      localDoctor: { id: null, firstName: '', lastName: '' },
-      patient: { gender: '', lastName: '', id: null },
-      remoteDoctor: { id: null, firstName: '', lastName: '' },
-      startTime: '',
-      zoomLink: '',
-    },
+    endTime: '',
+    id: null,
+    localDoctor: { id: null, firstName: '', lastName: '' },
+    patient: { gender: '', lastName: '', id: null },
+    remoteDoctor: { id: null, firstName: '', lastName: '' },
+    startTime: '',
+    zoomLink: '',
   },
   callConfig: {
     name: 'my conf',
