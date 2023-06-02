@@ -256,7 +256,15 @@
     "patients": "Patients"
   },
   "Appointments": {
-    "myAppointments": "My appointments:"
+    "myAppointments": "My appointments:",
+    "years": "y.o.",
+    "remoteDoctor": "Remote",
+    "localDoctor": "Local",
+    "localDoctorAgenda": "Local doctor",
+    "remoteDoctorAgenda": "Remote doctor",
+    "doctor": "Dr.",
+    "patient": "Patient",
+    "lastAppointment": "Last Appointment:"
   },
 
   "Notification": {
