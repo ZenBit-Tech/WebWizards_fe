@@ -51,17 +51,36 @@ const useAppointmentBookFormHook = () => {
   const onSubmit = async (data: DateObject) => {
     const [startTime, endTime] = data.appointmentTimeRange.split('-');
 
-    const start = parse(
-      `${format(data.date, fullYearFormat)} ${startTime.trim()}`,
-      fullDateTimeFormat,
-      new Date()
-    );
-    const end = parse(
-      `${format(data.date, fullYearFormat)} ${endTime.trim()}`,
-      fullDateTimeFormat,
-      new Date()
-    );
+    const parseDateTime = (dateTimeString) => {
+        const [time, period] = dateTimeString.split(' ');
+        let [hours, minutes] = time.split(':');
+  
+        if (period === 'PM') {
+          hours = (parseInt(hours, 10) + 12).toString();
+        }
+  
+        const [year, month, day] = data.date
+          .toISOString()
+          .split('T')[0]
+          .split('-');
+        return new Date(
+          Date.UTC(year, parseInt(month, 10) - 1, day, hours, minutes)
+        );
+      };
+  
+      const startTimeString = `${startTime.trim()} ${
+        startTime.includes('PM') ? 'PM' : 'AM'
+      }`;
+      const endTimeString = `${endTime.trim()} ${
+        endTime.includes('PM') ? 'PM' : 'AM'
+      }`;
+  
+      const start = parseDateTime(startTimeString);
+      const end = parseDateTime(endTimeString);
+  
 
+
+    
     const appointmentInfo = {
       localDoctorId: Number(doctorData.id),
       remoteDoctorId: Number(data?.doctor),
@@ -71,6 +90,11 @@ const useAppointmentBookFormHook = () => {
       startTime: start.toISOString(),
     };
 
+    console.log('data', data)
+    console.log('start', start)
+    console.log('end', end)
+    console.log(`appointmentInfo`, appointmentInfo);
+    
     await createAppointment(appointmentInfo);
 
     toast.success(t('BookAppointment.appointmentCreated'), {
