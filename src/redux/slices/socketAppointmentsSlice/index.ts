@@ -27,7 +27,7 @@ const socketAppointment = createSlice({
   initialState,
   reducers: {
     updateNextAppointment(state, action) {
-      state.nextAppointment = action.payload;
+      state.nextAppointment = action.payload.nextAppointment;
     },
     updateCallConfig(state, action) {
       state.callConfig = action.payload;
