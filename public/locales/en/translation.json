@@ -258,29 +258,6 @@
   "Appointments": {
     "myAppointments": "My appointments:"
   },
-
-  "Dashboard": {
-    "backToDashboard": "Back to dashboard",
-    "loading": "Loading...",
-    "WelcomeDr": "Welcome, Dr.",
-    "Notification": "Notification",
-    "LatestAppointments": " Latest Appointments",
-    "LoadMore": "Load More",
-    "Remote": "Remote",
-    "Local": "Local",
-    "Dr.": "Dr.",
-    "LastAppointment": "LastAppointment",
-    "myAppointments": "My appointments:",
-    "years": "y.o.",
-    "remoteDoctor": "Remote",
-    "localDoctor": "Local",
-    "localDoctorAgenda": "Local doctor",
-    "remoteDoctorAgenda": "Remote doctor",
-    "doctor": "Dr.",
-    "patient": "Patient",
-    "lastAppointment": "Last Appointment:"
-  },
-
   "Notification": {
     "youHaveVideoCallIn": "You will have a video-call in",
     "youCurrentlyHaveMeeting": "You currently have meeting with:",
