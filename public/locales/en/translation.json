@@ -256,7 +256,8 @@
     "patients": "Patients"
   },
   "Appointments": {
-    "myAppointments": "My appointments:"
+    "myAppointments": "My appointments:",
+    "doctor": "Dr."
   },
   "Notification": {
     "youHaveVideoCallIn": "You will have a video-call in",
