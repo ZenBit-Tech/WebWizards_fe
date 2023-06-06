@@ -256,6 +256,20 @@
     "patients": "Patients"
   },
   "Appointments": {
+    "myAppointments": "My appointments:"
+  },
+
+  "Dashboard": {
+    "backToDashboard": "Back to dashboard",
+    "loading": "Loading...",
+    "WelcomeDr": "Welcome, Dr.",
+    "Notification": "Notification",
+    "LatestAppointments": " Latest Appointments",
+    "LoadMore": "Load More",
+    "Remote": "Remote",
+    "Local": "Local",
+    "Dr.": "Dr.",
+    "LastAppointment": "LastAppointment",
     "myAppointments": "My appointments:",
     "years": "y.o.",
     "remoteDoctor": "Remote",
@@ -275,7 +289,8 @@
     "details": "Details",
     "goToMeetingRoom": "Go to the meeting room",
     "and": "and",
-    "minutesWith": "minutes with:"
+    "minutesWith": "minutes with:",
+    "goBack": "Go back"
   },
   "Chat": {
     "typeMessage": "Type your message...",
