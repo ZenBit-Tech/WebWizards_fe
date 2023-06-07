@@ -125,7 +125,7 @@
     "save": "Save",
     "cancel": "Cancel",
     "cardUpdetedSuccess": "Patient's card updated successfully",
-
+    "noOverviewYet": "The patient has no overview yet",
     "lastAppointment": "Last Appointment:",
     "cardCreatedSuccess": "Patient's card created successfully"
   },
@@ -256,9 +256,10 @@
     "patients": "Patients"
   },
   "Appointments": {
-    "myAppointments": "My appointments:",
-    "doctor": "Dr."
+   "myAppointments": "My appointments:",
+    "noAppointmentsYet": "The patient has no appointments yet"
   },
+
   "Notification": {
     "youHaveVideoCallIn": "You will have a video-call in",
     "youCurrentlyHaveMeeting": "You currently have meeting with:",
@@ -269,7 +270,8 @@
     "and": "and",
     "minutesWith": "minutes with:",
     "goBack": "Go back"
-  },
+},
+
   "Chat": {
     "typeMessage": "Type your message...",
     "isTyping": "is typing"

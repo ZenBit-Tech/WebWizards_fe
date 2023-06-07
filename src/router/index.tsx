@@ -125,7 +125,7 @@ const AppRouter = () => {
           }
         />
         <Route
-          path={PATH.APPOINTMENT}
+          path={PATH.APPOINTMENTS}
           element={
             <ProtectedRoute allowedRoles={['Remote', 'Local']}>
               <AppointmentsDoctorScheduler />

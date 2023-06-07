@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { bookAppointmentApi } from 'services/BookAppointmetService';
+
+import { appointmentApi } from 'services/AppointmentService';
 import { reverseFormatTimeRange } from 'utils/functions/timeUtils';
 
 interface Prop {
@@ -26,7 +27,7 @@ const useAppointmentSecondStepHook = ({
 
   //   send info to backend
   const { data: doctors, isLoading } =
-    bookAppointmentApi.useGetAllAvalibleDoctorsQuery({
+  appointmentApi.useGetAllAvalibleDoctorsQuery({
       start: selectedDateTime.start,
       end: selectedDateTime.end,
       specialization: specialization,

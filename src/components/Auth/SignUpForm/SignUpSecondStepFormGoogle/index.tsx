@@ -50,6 +50,7 @@ import { authApi } from 'services/AuthService';
 import { useAppSelector } from '@redux/hooks';
 import { doctorActions } from '@redux/slices/DoctorSlice';
 import cookie from 'utils/functions/cookies';
+import { local } from '@constants/other';
 
 function SignUpSecondFormGoogle() {
   const { t } = useTranslation();
@@ -64,6 +65,7 @@ function SignUpSecondFormGoogle() {
   const {
     handleSubmit,
     control,
+    watch,
     formState: { errors, isValid },
   } = useForm<FormValues>({
     mode: 'onChange',
@@ -74,7 +76,6 @@ function SignUpSecondFormGoogle() {
       city: '',
       country: '',
       address: '',
-      specialization: 0,
       birthDate: '',
       timeZone: '',
     },
@@ -92,6 +93,8 @@ function SignUpSecondFormGoogle() {
     refetch,
     isFetching,
   } = authApi.useGetMeQuery({});
+
+  const selectedRole = watch(role);
 
   React.useEffect(() => {
     dispatch(doctorActions.getDoctor(doctor));
@@ -141,7 +144,11 @@ function SignUpSecondFormGoogle() {
               fullWidth
               name={specialization}
               placeholder={t('Auth.enterSpecialization') ?? ''}
-              options={specializations}
+              options={
+                selectedRole === local
+                  ? specializations.filter((spec) => spec.value === 0)
+                  : specializations.filter((spec) => spec.value !== 0)
+              }
               helperText={errors.specialization?.message}
               error={Boolean(errors?.specialization)}
               required={true}
