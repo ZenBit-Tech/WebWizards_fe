@@ -249,7 +249,8 @@
     "lastAppointment": "Last Appointment",
     "noAppointmentsYet": "The patient has no appointments yet",
     "goBack": "Go back"
-  },
+},
+
   "Chat": {
     "typeMessage": "Type your message...",
     "isTyping": "is typing"

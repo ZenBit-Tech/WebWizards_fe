@@ -52,3 +52,11 @@ export const MAX_CHARACTER_LIMIT = 250;
 export const enUS = 'en-US';
 
 export const PM = 'PM';
+
+export const AM = 'AM';
+
+export const decimalNumber =10;
+
+export const twelveHours = 12;
+
+export const oneMonth = 1;
