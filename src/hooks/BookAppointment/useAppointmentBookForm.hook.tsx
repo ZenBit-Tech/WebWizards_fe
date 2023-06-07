@@ -28,7 +28,7 @@ interface DateObject {
 const useAppointmentBookFormHook = () => {
   const [selectedDate, setSelectedDate] = useState<Date | string>();
   const [formattedDate, setFormattedDate] = useState<string>('');
-  const [createAppointment] = bookAppointmentApi.useCreateAppointmentMutation();
+  const [createAppointment] = appointmentApi.useCreateAppointmentMutation();
   const doctorData = useAppSelector((state) => state.doctorReducer);
   const navigate = useNavigate();
   const { t } = useTranslation();

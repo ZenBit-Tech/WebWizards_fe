@@ -20,21 +20,17 @@ import { noteApi } from 'services/NoteService';
 import { navigationReducer } from 'redux/slices/NavigationSlice';
 import { doctorReducer } from 'redux/slices/DoctorSlice';
 import { resetPasswordReducer } from '@redux/slices/auth/resetPassword';
-// import { createPatientReducer } from '@redux/slices/patient/createPatient';
+import { createPatientReducer } from '@redux/slices/patient/createPatient';
 // <<<<<<< HEAD
-// import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
-// import { patientApi } from 'services/PatientService';
-// import { availabilityApi } from 'services/AvailabilityService';
-// import { appointmentApi } from 'services/AppointmentService';
-// import { socketAppointmentReducer } from '@redux/slices/socketAppointmentsSlice';
-// import { zoomReducer } from './slices/ZoomSlice';
-// import { zoomApi } from 'services/ZoomService';
+import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
+import { patientApi } from 'services/PatientService';
+import { availabilityApi } from 'services/AvailabilityService';
+import { appointmentApi } from 'services/AppointmentService';
+import { socketAppointmentReducer } from '@redux/slices/socketAppointmentsSlice';
+import { zoomReducer } from './slices/ZoomSlice';
+import { zoomApi } from 'services/ZoomService';
 // import { bookAppointmentApi } from 'services/BookAppointmetService';
 // =======
-import { noteFilterReducer } from './slices/NoteFilterSlice';
-import { patientApi } from '../services/PatientService';
-import { availabilityApi } from '../services/AvailabilityService';
-import { appointmentApi } from '../services/AppointmentService';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -55,7 +51,6 @@ const rootReducer = combineReducers({
   [availabilityApi.reducerPath]: availabilityApi.reducer,
   [appointmentApi.reducerPath]: appointmentApi.reducer,
   [zoomApi.reducerPath]: zoomApi.reducer,
-  [bookAppointmentApi.reducerPath]: bookAppointmentApi.reducer,
 });
 const persistConfig = {
   key: 'root',
@@ -95,8 +90,7 @@ export const setupStore = () =>
         patientApi.middleware,
         availabilityApi.middleware,
         appointmentApi.middleware,
-        zoomApi.middleware,
-        bookAppointmentApi.middleware
+        zoomApi.middleware
       ),
   });
 export const store = setupStore();

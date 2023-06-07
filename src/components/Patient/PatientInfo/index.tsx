@@ -45,10 +45,7 @@ function PatientCardInfo() {
 
   const { id } = useParams();
 
-  const { data: patient, isLoading } = patientApi.useGetPatientByIdQuery(
-    Number(id)
-  );
-
+ 
   const {
     data: patient,
     isLoading,
