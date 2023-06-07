@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+
 import { appointmentApi } from 'services/AppointmentService';
 import { reverseFormatTimeRange } from 'utils/functions/timeUtils';
 
@@ -26,13 +27,15 @@ const useAppointmentSecondStepHook = ({
 
   //   send info to backend
   const { data: doctors, isLoading } =
-    appointmentApi.useGetAllAvalibleDoctorsQuery({
+  appointmentApi.useGetAllAvalibleDoctorsQuery({
       start: selectedDateTime.start,
       end: selectedDateTime.end,
       specialization: specialization,
       limit: limit,
     });
 
+
+    console.log(doctors)
   //work with filter input
   let filtered = doctors;
 

@@ -28,7 +28,7 @@ interface DateObject {
 const useAppointmentBookFormHook = () => {
   const [selectedDate, setSelectedDate] = useState<Date | string>();
   const [formattedDate, setFormattedDate] = useState<string>('');
-  const [createAppointment] = appointmentApi.useCreateAppointmentMutation();
+  const [createAppointment] = bookAppointmentApi.useCreateAppointmentMutation();
   const doctorData = useAppSelector((state) => state.doctorReducer);
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -61,6 +61,7 @@ const useAppointmentBookFormHook = () => {
     const [startTime, endTime] = data.appointmentTimeRange.split('-');
 
     const parseDateTime = (dateTimeString) => {
+
       const [time, period] = dateTimeString.split(' ');
       let [hours, minutes] = time.split(':');
 
@@ -91,6 +92,7 @@ const useAppointmentBookFormHook = () => {
     const start = parseDateTime(startTimeString);
     const end = parseDateTime(endTimeString);
 
+    
     const appointmentInfo = {
       localDoctorId: Number(doctorData.id),
       remoteDoctorId: Number(data?.doctor),
@@ -100,8 +102,12 @@ const useAppointmentBookFormHook = () => {
       startTime: start.toISOString(),
     };
 
-    console.log(appointmentInfo);
 
+    console.log('data', data)
+    console.log('start', start)
+    console.log('end', end)
+    console.log(`appointmentInfo`, appointmentInfo);
+  console.log(appointmentInfo);
     await createAppointment(appointmentInfo);
 
     toast.success(t('BookAppointment.appointmentCreated'), {

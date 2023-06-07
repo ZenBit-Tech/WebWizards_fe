@@ -49,6 +49,7 @@ import { doctorApi } from 'services/DoctorService';
 import { authApi } from 'services/AuthService';
 import { useAppSelector } from '@redux/hooks';
 import { doctorActions } from '@redux/slices/DoctorSlice';
+import cookie from 'utils/functions/cookies';
 import { local } from '@constants/other';
 
 function SignUpSecondFormGoogle() {
@@ -56,6 +57,8 @@ function SignUpSecondFormGoogle() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
   const doctorData = useAppSelector((state) => state.doctorReducer);
+
+  console.log(cookie.get('accessToken'));
 
   const { signUpSecondStepSchema } = signUpSchema();
 

@@ -20,7 +20,17 @@ import { noteApi } from 'services/NoteService';
 import { navigationReducer } from 'redux/slices/NavigationSlice';
 import { doctorReducer } from 'redux/slices/DoctorSlice';
 import { resetPasswordReducer } from '@redux/slices/auth/resetPassword';
-import { createPatientReducer } from '@redux/slices/patient/createPatient';
+// import { createPatientReducer } from '@redux/slices/patient/createPatient';
+// <<<<<<< HEAD
+// import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
+// import { patientApi } from 'services/PatientService';
+// import { availabilityApi } from 'services/AvailabilityService';
+// import { appointmentApi } from 'services/AppointmentService';
+// import { socketAppointmentReducer } from '@redux/slices/socketAppointmentsSlice';
+// import { zoomReducer } from './slices/ZoomSlice';
+// import { zoomApi } from 'services/ZoomService';
+// import { bookAppointmentApi } from 'services/BookAppointmetService';
+// =======
 import { noteFilterReducer } from './slices/NoteFilterSlice';
 import { patientApi } from '../services/PatientService';
 import { availabilityApi } from '../services/AvailabilityService';
@@ -36,12 +46,16 @@ const rootReducer = combineReducers({
   activationAccountReducer,
   createPatientReducer,
   noteFilterReducer,
+  zoomReducer,
+  socketAppointmentReducer,
   [noteApi.reducerPath]: noteApi.reducer,
   [doctorApi.reducerPath]: doctorApi.reducer,
   [authApi.reducerPath]: authApi.reducer,
   [patientApi.reducerPath]: patientApi.reducer,
   [availabilityApi.reducerPath]: availabilityApi.reducer,
   [appointmentApi.reducerPath]: appointmentApi.reducer,
+  [zoomApi.reducerPath]: zoomApi.reducer,
+  [bookAppointmentApi.reducerPath]: bookAppointmentApi.reducer,
 });
 const persistConfig = {
   key: 'root',
@@ -53,10 +67,14 @@ const persistConfig = {
     'forgotPassword',
     'loginReducer',
     'signUpReducer',
+    'zoomApi',
+    'zoomReducer',
     'noteFilterReducer',
+    'socketAppointmentReducer',
     'authApi',
     'noteApi',
     'appointmentApi',
+    'bookAppointmentApi',
   ],
 };
 
@@ -76,7 +94,9 @@ export const setupStore = () =>
         noteApi.middleware,
         patientApi.middleware,
         availabilityApi.middleware,
-        appointmentApi.middleware
+        appointmentApi.middleware,
+        zoomApi.middleware,
+        bookAppointmentApi.middleware
       ),
   });
 export const store = setupStore();
