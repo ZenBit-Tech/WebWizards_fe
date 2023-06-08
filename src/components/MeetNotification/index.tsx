@@ -28,9 +28,13 @@ const token = cookie.get('accessToken');
 const MeetNotification = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const nextAppointment =
+  useAppSelector((state) => state.socketAppointmentReducer.nextAppointment);
+console.log('nextAppointment', nextAppointment)
   const { patient, startTime, endTime, remoteDoctor, localDoctor } =
-    useAppSelector((state) => state.socketAppointmentReducer.nextAppointment);
-    
+  useAppSelector((state) => state.socketAppointmentReducer.nextAppointment);
+  console.log('patient', patient)
+
   const doctor = useAppSelector((state) => state.doctorReducer);
 
   const { timer, minutes, seconds } = useTimer(startTime);
@@ -60,9 +64,9 @@ const MeetNotification = () => {
     };
   }, []);
 
-  const handleAppointmentStarted = (data: Appointment) => {
+  const handleAppointmentStarted = (data) => {
     if (data) {
-      dispatch(socketAppointmentActions.updateNextAppointment(data));
+      dispatch(socketAppointmentActions.updateNextAppointment(data.nextAppointment));
     }
   };
 

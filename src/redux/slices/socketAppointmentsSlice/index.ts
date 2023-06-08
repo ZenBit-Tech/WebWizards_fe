@@ -1,14 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  nextAppointment: {
-    endTime: '',
-    id: null,
-    localDoctor: { id: null, firstName: '', lastName: '' },
-    patient: { gender: '', lastName: '', id: null },
-    remoteDoctor: { id: null, firstName: '', lastName: '' },
-    startTime: '',
-    zoomLink: '',
+  nextAppointment:{
+    //  nextAppointment: {
+      endTime: '',
+      id: null,
+      localDoctor: { id: null, firstName: '', lastName: '' },
+      patient: { gender: '', lastName: '', id: null },
+      remoteDoctor: { id: null, firstName: '', lastName: '' },
+      startTime: '',
+      zoomLink: '',
+    // },
   },
   callConfig: {
     name: '',
@@ -27,10 +29,10 @@ const socketAppointment = createSlice({
   initialState,
   reducers: {
     updateNextAppointment(state, action) {
-      state.nextAppointment = action.payload.nextAppointment;
+      state.nextAppointment = action.payload;
     },
     updateCallConfig(state, action) {
-      state.callConfig = action.payload.callConfig;
+      state.callConfig = action.payload;
     },
   },
 });

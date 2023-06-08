@@ -28,11 +28,11 @@ const ZoomComponent = () => {
   const { t } = useTranslation();
 
   const socketNextAppointment = useAppSelector(
-    (state) => state.socketAppointmenttReducer.nextAppointment
+    (state) => state.socketAppointmentReducer.nextAppointment
   );
 
   const socketCallConfig = useAppSelector(
-    (state) => state.socketAppointmenttReducer.callConfig
+    (state) => state.socketAppointmentReducer.callConfig
   );
 
   const participantCanvasRef = React.useRef<HTMLCanvasElement | null>(null);
