@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   nextAppointment:{
-    //  nextAppointment: {
       endTime: '',
       id: null,
       localDoctor: { id: null, firstName: '', lastName: '' },
@@ -10,7 +9,6 @@ const initialState = {
       remoteDoctor: { id: null, firstName: '', lastName: '' },
       startTime: '',
       zoomLink: '',
-    // },
   },
   callConfig: {
     name: '',
