@@ -60,3 +60,5 @@ export const decimalNumber =10;
 export const twelveHours = 12;
 
 export const oneMonth = 1;
+
+export const numberTen = 10;

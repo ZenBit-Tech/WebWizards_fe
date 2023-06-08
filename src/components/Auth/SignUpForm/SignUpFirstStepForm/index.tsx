@@ -31,7 +31,35 @@ import SignUpSecondForm from '@components/Auth/SignUpForm/SignUpSecondStepForm';
 import { ToastContainer } from 'react-toastify';
 import useSignUpFirstStepHook from 'hooks/useSignUpFirstStep.hook';
 
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
+import { PADDING } from '@constants/other';
+
+
 function SignUpFirstForm() {
+
+    
+    const onSuccess = async response => {
+        try {
+          const googleUser = await axios.get(
+            `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${response.access_token}`
+          );
+    
+
+          console.log(`googleUser`, googleUser)
+          const { email, name } = googleUser.data;
+          const accessToken = response.access_token;
+          console.log(`accessToken`, accessToken)
+    
+        } catch (error) {
+        }
+      };
+    
+      const googleLogin = useGoogleLogin({
+        onSuccess,
+        // onError: error => toast.error(i18n.t('t_login_2')` - ${error}`),
+      });
+
   const { t } = useTranslation();
   const tWithDefault = (key: string) => {
     const translation = t(key);
@@ -53,6 +81,10 @@ function SignUpFirstForm() {
 
   return (
     <>
+  <button type="button" onClick={googleLogin} style={{backgroundColor:"blue", color:"white", height:"40px", padding:"10px"}}>
+                  
+                  <span>GOOGLE 🚀{' '}</span>
+                </button>
       {isFirstStep ? (
         <Container>
           <FormContainer>
