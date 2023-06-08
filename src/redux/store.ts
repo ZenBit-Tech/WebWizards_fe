@@ -22,10 +22,13 @@ import { doctorReducer } from 'redux/slices/DoctorSlice';
 import { resetPasswordReducer } from '@redux/slices/auth/resetPassword';
 import { createPatientReducer } from '@redux/slices/patient/createPatient';
 import { noteFilterReducer } from 'redux/slices/NoteFilterSlice';
-import { patientApi } from 'services/PatientService';
-import { availabilityApi } from 'services/AvailabilityService';
-import { appointmentApi } from 'services/AppointmentService';
-import { socketAppointmentReducer } from '@redux/slices/socketAppointmentsSlice';
+import { socketAppointmenttReducer } from '@redux/slices/socketAppointmentsSlice';
+import { zoomApi } from 'services/ZoomService';
+import { zoomReducer } from './slices/ZoomSlice';
+import { noteFilterReducer } from './slices/NoteFilterSlice';
+import { patientApi } from '../services/PatientService';
+import { availabilityApi } from '../services/AvailabilityService';
+import { appointmentApi } from '../services/BookAppointmetService';
 
 const rootReducer = combineReducers({
   loginReducer,
@@ -43,6 +46,7 @@ const rootReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
   [patientApi.reducerPath]: patientApi.reducer,
   [availabilityApi.reducerPath]: availabilityApi.reducer,
+  [zoomApi.reducerPath]: zoomApi.reducer,
   [appointmentApi.reducerPath]: appointmentApi.reducer,
 });
 const persistConfig = {
@@ -81,6 +85,7 @@ export const setupStore = () =>
         noteApi.middleware,
         patientApi.middleware,
         availabilityApi.middleware,
+        zoomApi.middleware,
         appointmentApi.middleware
       ),
   });

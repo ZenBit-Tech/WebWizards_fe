@@ -9,6 +9,7 @@ const initialState = {
     remoteDoctor: { id: null, firstName: '', lastName: '' },
     startTime: '',
     zoomLink: '',
+  },
   callConfig: {
     name: '',
     tpc: '',
@@ -16,11 +17,10 @@ const initialState = {
     user_identity: '',
     session_key: '',
     signature: null,
-    password: '',
+    password: '0000',
   },
   roomName: '',
-  }
-};
+}
 
 const socketAppointment = createSlice({
   name: 'socketAppointment',
@@ -28,6 +28,9 @@ const socketAppointment = createSlice({
   reducers: {
     updateNextAppointment(state, action) {
       state.nextAppointment = action.payload.nextAppointment;
+    },
+    updateCallConfig(state, action) {
+      state.callConfig = action.payload.callConfig;
     },
   },
 });

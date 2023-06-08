@@ -284,5 +284,15 @@
   "Chat": {
     "typeMessage": "Type your message...",
     "isTyping": "is typing"
+  },
+
+  "Zoom": {
+    "Chat": "Chat",
+    "Finish": "Finish and call next client",
+    "StartCall": "Start Call",
+    "left": "You left the session",
+    "joined": "You joined the session",
+    "noAppointments": "You have no active appointments",
+    "startCall": "Start Call"
   }
 }
