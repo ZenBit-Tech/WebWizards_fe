@@ -124,6 +124,10 @@ export const SendButton = styled.input`
 `;
 
 export const AuthGoogleContainer = styled.a`
+  padding: 0 15px;
+  height: 60px;
+  outline: none;
+  gap: 10px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -132,20 +136,17 @@ export const AuthGoogleContainer = styled.a`
   font-family: ${FONT_ROBOTO};
   border-radius: 8px;
   border: 2px solid ${WHISPER};
-  height: 55px;
-  width: 45%;
   margin-top: 40px;
   background-color: ${WHITE};
   color: ${BLACK};
   font-size: ${SMALL_FONT_SIZE};
   font-weight: bold;
   transition: all 0.2s ease-in-out;
-  padding: 0px 15px 0px 15px;
 
   &:hover {
     background-color: ${NAVY_BLUE};
     color: ${WHITE};
-    border-color: ${BLACK};
+    border-color: ${NAVY_BLUE};
   }
 `;
 
@@ -156,7 +157,6 @@ export const GoogleImg = styled.img`
 
 export const GoogleText = styled.span`
   text-align: center;
-  width: 80%;
 `;
 
 export const LinkContainer = styled.div`
